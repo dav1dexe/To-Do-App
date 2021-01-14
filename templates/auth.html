@@ -1,0 +1,45 @@
+{% extends 'base.html '%}
+
+{% block title %}Добавление статьи{% endblock%}
+
+
+{% block nav %}
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+    <h3 class="my-0 mr-md-auto font-weight-normal pl-5"><a href='/'>Главная</a></h3>
+</div>
+{% endblock %}
+
+
+{% block body %}
+<div class="container">
+    <br><br><br><br><br>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <header class="card-header">
+                    <h4 class="card-title mt-2">Авторизация</h4>
+                </header>
+    <article class="card-body">
+        <form>
+            <div class="form-row">
+                <div class="col form-group">
+                    <label>Имя пользователя</label>   
+                    <input type="text" class="form-control" placeholder="">
+                </div> 
+            </div> 
+            <div class="form-group">
+                <label>Пароль</label>
+                <input class="form-control" type="password">
+            </div> 
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Вход</button>
+            </div> 
+        </form>
+    </article>
+    <div class="border-top card-body text-center">Нет аккаунта? <a href="/register">Зарегистрируйтесь</a></div>
+    <br><br><br><br><br>
+        </div>
+    </div>    
+</div>
+    
+{% endblock %}
