@@ -4,40 +4,43 @@
 
 {% block nav %}
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-    <h3 class="my-0 mr-md-auto font-weight-normal pl-5 localization" caption="test"><a href='/'>Главная</a></h3>
+    <h3 class="my-0 mr-md-auto font-weight-normal"><a href='/' class='localization' caption="main">Главная</a></h3>
+    <a class="p-2 mr-3 text-dark localization" href="#">Все задания</a>
+    <a href='/add'><button type="button" class="btn btn-success">Добавить</button></a>
     <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 mr-3 text-dark localization" href="#">Все задания</a>
-        <a href='/add'><button type="button" class="btn btn-success">Добавить</button></a>
         <button class="ru btn btn-default">
-            <img src="{{ url_for('static', filename='ru.png') }}" width="50" height="30" class="rounded-bottom rounded-top" />
+            <img src="{{ url_for('static', filename='img/ru.png') }}" width="50" height="30" class="rounded-bottom rounded-top" />
         </button>
         <button class="en btn btn-default">
-            <img src="{{ url_for('static', filename='en.png') }}" width="50" height="30" class="rounded-bottom rounded-top" />
+            <img src="{{ url_for('static', filename='img/en.png') }}" width="50" height="30" class="rounded-bottom rounded-top" />
         </button>
         <button class="ge btn btn-default">
-            <img src="{{ url_for('static', filename='ge.png') }}" width="50" height="30" class="rounded-bottom rounded-top" />
+            <img src="{{ url_for('static', filename='img/ge.png') }}" width="50" height="30" class="rounded-bottom rounded-top" />
         </button>
     </nav>  
 </div>
 {% endblock %}
 
 {% block body %}
-<div class="container pt-md-5 pb-md-4 text-center border-bottom">
-    <h1 class="display-4 font-weight-bold">Расписание дел</h1>
-    <p class="lead pt-5 pb-5">
-        Веб приложение, которое было написано на Python Flask для отслеживания списка своих дел
-    </p>
-</div>
-<div class="container pt-md-5 pb-md-4 text-center border-bottom">
-    <h1 class="display-4">Как пользоваться?</h1>
-    <p class="lead pt-5 pb-5">
-        Все просто    
-    </p>
-</div>
-<div class="container pt-md-5 pb-md-4 text-center border-bottom">
-    <h1 class="display-4">Расписание дел</h1>
-    <p class="lead pt-5 pb-5">
-        Веб приложение, которое было написано на Python Flask для отслеживания списка своих дел
-    </p>
+    <div class="pt-md-5 pb-md-4 text-center border-bottom">
+        <h1 class="display-4 font-weight-bold">Расписание дел</h1>
+        <p class="lead pt-5 pb-5">
+            Веб приложение, которое было написано на Python Flask для отслеживания списка своих дел
+        </p>
+    </div>
+<div class="container">
+    <div class="pt-md-5 pb-md-4 text-center border-bottom">
+        <h1 class="display-4">Как пользоваться?</h1>
+        <p class="lead pt-5 pb-5 display-5">
+            Для начала нужно будет <a href='/register'><button type="button" class="btn btn-primary">Зарегистироваться</button></a> на сайте.<br>
+            Если уже зарегистированы нужно будет пройти <a href='/auth'><button type="button" class="btn btn-success">Авторизацию</button></a>
+        </p>
+    </div>
+    <div class="pt-md-5 pb-md-4 text-center border-bottom">
+        <h1 class="display-4">Расписание дел</h1>
+        <p class="lead pt-5 pb-5">
+            Веб приложение, которое было написано на Python Flask для отслеживания списка своих дел
+        </p>
+    </div>
 </div>
 {% endblock %}
