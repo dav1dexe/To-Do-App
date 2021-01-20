@@ -4,8 +4,8 @@ from os import environ
 import time
 
 
-# environ['TZ'] = 'Asia/Dubai'
-# time.tzset()
+environ['TZ'] = 'Asia/Dubai'
+time.tzset()
 
 
 class Database:
