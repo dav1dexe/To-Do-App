@@ -1,0 +1,65 @@
+{% extends 'base.html '%}
+
+{% block title %}Профиль • {{ user_data[1].capitalize() }}{% endblock %}
+
+
+{% block nav %}
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-light border-bottom box-shadow">
+    <h3 class="my-0 mr-md-auto"><a href="{{ url_for('index')}}">Главная</a></h3>
+    <a class="btn btn-dark logout" href="{{ url_for('logout')}}">Выйти <i class="fas fa-sign-out-alt"></i></a>
+</div>
+{% endblock %}
+{% block body %}
+<div class="container mt-5 mb-5 border-bottom p-3">
+    <div class="container d-flex justify-content-between mt-1 mb-5 acc-info">
+        <img class="rounded-circle avatar" src="https://figment-hosting.co.uk/wp-content/uploads/2015/08/avatar-1-300x300.png" alt="Avatar">
+        <div class="avatar-text">
+            <h1 class="border-bottom p-2">{{ user_data[1].capitalize() }}<i class="ml-3 fas fa-user"></i></h1>
+            <h3 class="border-bottom p-2">ID - {{ user_data[0] }}<i class="ml-3 fas fa-address-card"></i></h3>
+            <h5 class="border-bottom p-2">Reg - {{ user_data[3] }}<i class="ml-3 fas fa-table"></i></h5>
+        </div>
+    </div>
+</div>
+<div class="container border-bottom pb-5">
+    <h3 class="display-4">Добавить запись</h3>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <div class="mt-5">
+                    <h3 class="text-primary border p-2 d-inline-block rounded-bottom rounded-top">Запись была добавлена !</h3>
+                 </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form action="" method="post">
+    <div class="input-group mb-3 mt-5">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Заголовок</span>
+      </div>
+      <input name="title" maxlength="50" type="text" class="form-control" placeholder="Ввведите заголовок записи..." aria-label="Тема" required>
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Подробно</span>
+        </div>
+        <textarea name="text" maxlength="300" type="text" class="form-control" placeholder="Введите текст подробнее..." required></textarea>
+    <button type="submit" class="btn btn-success mt-3 btn-lg btn-block">Отправить</button>
+    </div>
+    </form>
+</div>
+<div class="container mt-5">
+    <h3 class="display-4">Записи - {{ user_data[1].capitalize()}}</h3>
+    <h2 class="font-weight-normal pt-5">Всего записей - {{ posts|length }}</h2>
+    {% for post in posts|reverse %}
+    <div class="card mb-4 box-shadow mt-5">
+      <div class="card-header">
+        <h3 class="my-0 font-weight-normal">{{ post[0] }}</h3>
+      </div>
+      <div class="card-body">
+          <h5><small class="text-muted">{{ post[1] }}</small></h5>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+<br><br><br>
+{% endblock %}

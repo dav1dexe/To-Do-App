@@ -10,18 +10,18 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-  {% block nav %}{% endblock %}
-  {% block body %}{% endblock %}
-  <footer class="footer border-top">
-    <div class="container p-3">
-      <h5>Разработчик:
-      <a href="tg://resolve?domain=dav1dexe" class="text-decoration-none">
-        <i class="fab fa-telegram pl-2"></i> 
-        dav1dexe
-      </a></h5>
+  {% block nav %}{% endblock %}{% block body %}{% endblock %}
+  <footer class="footer border-top mb-5">
+    <div class="container p-3 d-flex mt-5">
+        <h5>Разработчик:</h5>
+            <div class="icons">
+                  <a href="tg://resolve?domain=dav1dexe" target="_blank" class="text-decoration-none ml-4"><i class="fab fa-telegram"></i></a>
+                  <a href="https://www.instagram.com/dav1dexe/" target="_blank" class="text-decoration-none ml-4 text-danger"><i class="fab fa-instagram"></i></a>
+                  <a href="https://github.com/dav1dexe" target="_blank" class="text-decoration-none ml-4 text-dark"><i class="fab fa-github"></i></a>
+                  <a href="https://vk.com/dav1dexe" target="_blank" class="text-decoration-none ml-4"><i class="fab fa-vk"></i></a>
+                  <a href="https://www.facebook.com/dav1dexe" target="_blank" class="text-decoration-none ml-4"><i class="fab fa-facebook"></i></a>
+            </div>
     </div>
   </footer>
-  <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename='js/lang.js') }}"></script>
 </body>
 </html>

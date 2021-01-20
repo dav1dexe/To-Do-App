@@ -1,11 +1,11 @@
 {% extends 'base.html '%}
 
-{% block title %}Добавление статьи{% endblock%}
+{% block title %}Регистрация{% endblock %}
 
 
 {% block nav %}
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-    <h3 class="my-0 mr-md-auto font-weight-normal pl-5"><a href='/'>Главная</a></h3>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-light border-bottom box-shadow">
+    <h3 class="my-0 mr-md-auto"><a href="{{ url_for('index')}}">Главная</a></h3>
 </div>
 {% endblock %}
 
@@ -14,32 +14,45 @@
 <div class="container">
     <br><br><br><br><br>
     <div class="row justify-content-center">
-    <div class="col-md-6">
-    <div class="card">
-    <header class="card-header">
-        <h4 class="card-title mt-2">Регистрация</h4>
-    </header>
+        <div class="col-md-6">
+            <div class="card">
+                <header class="card-header">
+                    <h4 class="card-title mt-2">Регистрация <i class="fas fa-user-plus"></i></h4>
+                </header>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for msg in messages %}
+                         <div class="card-header">
+                             <span class="text-danger">{{ msg }}</span>
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
     <article class="card-body">
-    <form>
-        <div class="form-row">
-            <div class="col form-group">
-                <label>Имя пользователя</label>   
-                  <input type="text" class="form-control" placeholder="">
-            </div> 
-        </div> 
-        <div class="form-group">
-            <label>Пароль</label>
-            <input class="form-control" type="password">
-        </div> 
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Вход</button>
-        </div> 
-    </form>
+        <form method="post">
+            <div class="form-row">
+                <div class="col form-group">
+                    <label>Имя пользователя</label>
+                    <input maxlength="15" name="username" type="text" class="form-control" placeholder="Ввведите логин">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Пароль</label>
+                <input name="pass" class="form-control" type="password" placeholder="Ввведите пароль">
+            </div>
+            <div class="form-group">
+                <label>Повторение пароля</label>
+                <input name="pass2" class="form-control" type="password" placeholder="Повторите пароль">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Вход</button>
+            </div>
+        </form>
     </article> 
-    <div class="border-top card-body text-center">Есть аккаунт? <a href="/auth">Авторизуйтесь</a></div>
-    </div> 
-    </div> 
+    <div class="card-body text-center">Есть аккаунт? <a href="{{ url_for('auth')}}">Авторизуйтесь</a></div>
     </div> 
     </div>
-    <br><br><br><br><br><br><br><br>
+    </div>
+</div>
+<br><br><br><br><br>
 {% endblock %}

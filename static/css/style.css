@@ -1,3 +1,1 @@
-a:hover {
-    text-decoration: none;
-}
+a:hover{text-decoration:none}@media only screen and (max-width:996px){.nav{margin:20px 20px}.div-text{margin-top:30px}.main-text,.second-text{text-align:center}video{display:none}}@media only screen and (max-width:767px){.profile{margin-top:20px;margin-left:15px;margin-bottom:15px}.logout{margin-top:25px}.avatar{display:none!important}}@media only screen and (max-width:320px){.nav{margin:0;justify-content:center;margin-top:20px;margin-bottom:15px}.main-text{font-size:30px;font-weight:400}}
