@@ -3,7 +3,7 @@ from db import Database
 import bcrypt
 
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='template')
 app.config['SESSION_TYPE'] = 'memcached'
 app.config['SECRET_KEY'] = '+dZL@dds^xyzNG.ifgjWO-]8v>Cj)xe1}t@CiEyNU4#)8ZenoaOeN"3+'
 
