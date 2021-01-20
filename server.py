@@ -97,6 +97,3 @@ def logout():
     else:
         return render_template('404.html', cause='Ты не авторизован')
 
-
-if __name__ == '__main__':
-    app.run(debug=False)
