@@ -15,10 +15,10 @@ class Database:
     cursor = connection.cursor()
 
     '''Регистрирует пользователя'''
-    def add_user(self, username, password_hash, time=dt):
+    def add_user(self, username, password_hash, date=dt):
         with self.connection:
             return self.cursor.connection.execute(
-                'INSERT INTO users (username, hash, datetime) VALUES (?, ?, ?)', (username, password_hash, time)
+                'INSERT INTO users (username, hash, datetime) VALUES (?, ?, ?)', (username, password_hash, date)
             )
 
     '''Проверяет данные от пользователя'''

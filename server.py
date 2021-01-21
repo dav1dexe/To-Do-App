@@ -13,11 +13,6 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/add')
-def add():
-    return render_template('add.html')
-
-
 @app.route('/profile', methods=['GET', 'POST'])
 def profile():
     if 'user' in session:
